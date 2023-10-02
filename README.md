@@ -37,7 +37,7 @@ Sau khi tải về, giải nén và có thể chạy thử demo.
 
 - Copy dòng sau giữa thẻ body:
 
-        <div id="alohub_sipml5">
+        <div id="alohub_shipjs_container">
         <audio id="audio_remote" autoplay="autoplay"></audio>
         <audio id="ringtone" loop="" src="sounds/ringtone.wav"></audio>
         <audio id="ringbacktone" loop="" src="sounds/ringbacktone.wav"></audio>
