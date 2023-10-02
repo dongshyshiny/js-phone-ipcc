@@ -1,36 +1,44 @@
-# Demo-Embed-JS-PHONE
-**Giải pháp tích hợp luồng voice giữa ứng dụng web bên thứ 3 và JS-PHONE**
+# Hướng dẫn nhúng webphone vào ứng dụng CRM của doanh nghiệp
 
-1. **Mô tả các chức năng**
+1. **Chức năng của webphone**
 
-- Hỗ trợ các loại ứng dụng web (web app) tích hợp tổng đài thoại JS-PHONE.
+- Là một webphone dựa trên mã nguồn mở javascript.
 
-- Người dùng (user) của doanh nghiệp có thể thực hiện việc tiếp nhận cuộc gọi hay gọi điện ra ra cho khách hàng thông qua số hotline.
+- Công nghệ sử dụng WebRTC chạy trực tiếp trên trình duyệt (Chrome/Firefox/Edge/CocCoc/Safari), không cần cài đặt thêm softphone ngoài.
 
-- Popup thông tin khách hàng khi có cuộc gọi đến
+- Thực hiện gọi ra Click-to-call trên webphone
 
-- Công nghệ sử dụng WebRTC không cần cài đặt thêm phần mềm nghe gọi điện.
-
-- Hỗ trợ tích hợp với các thiết bị nghe gọi như IP Phone, Softphone
+- Tiếp nhận cuộc gọi vào trên webphone
+  
+- Hỗ trợ popup thông tin khách hàng khi có cuộc gọi đến
 
 2. **Khởi tạo**
 
-- Cần có các thông tin cơ bản để đăng nhập như API endpoint ...
-- Lấy các thông tin kết nối từ bộ phận hỗ trợ Alohub và lưu lại.
+- Thông tin đăng nhập webphone như API endpoint, API key ... Các thông tin này sẽ được chúng tôi cung cấp khi đăng ký dịch vụ.
+  
+- Mã nguồn webphone được chia sẻ tại github 
 
 3. **Hướng dẫn tích hợp**
 
-**Chú ý:** Toàn bộ mã nguồn Demo của việc tích hợp với hệ thống tổng đài được upload tại đây.
+**Bước 1: Demo **
+Sau khi tải về, giải nén và có thể chạy thử demo trên local hoặc demo online tại:
+https://app.alohub.vn/jsphonev10.0/index.html
 
-Sau khi tải về, giải nén và có thể chạy thử demo.
+**Bước 2: Lấy thông tin đăng nhập vào hệ thống**
 
-**Bước 1: Lấy thông tin đăng nhập vào hệ thống**
+- API Endpoint: Địa chỉ API để gọi ra click-to-call
+- API Key: Key tích hợp
+- WebSocket Server URL: Địa chỉ socket server để webphone đăng nhập vào
+- ICE Servers: Địa chỉ STUN server, mặc định: [{ url: 'stun:stun.l.google.com:19302'}]
+- Display Name: Ví dụ 1000
+- Private Identity: Ví dụ 1000
+- Public Identity: Ví dụ sip:1000@sipserver:port
+- Password: Ví dụ 123456
+- Realm: Tùy chọn, có thể bỏ qua
 
-- Khi agent đăng ký hệ thống sẽ cung cấp các thông tin để truy cập.
+**Bước 3: Lập trình tích hợp tiếp nhận cuộc gọi JSPhone vào CRM**
 
-**Bước 2: Lập trình tích hợp tiếp nhận cuộc gọi JSPhone vào CRM**
-
-- Import các lib javascript đã được VCC cung cấp sẵn vào CRM (trong đó sipjs.js là file js chứa các hàm Alohub định nghĩa sẵn để hỗ trợ thông báo, xử lý giao diện, tương tác tuỳ theo nhu cầu của từng CRM)
+- Import các lib javascript vào ứng dụng CRM của doanh nghiệp, các lib này được đóng gói trong mã nguồn cung cấp (trong đó sipjs.js là file js chứa các hàm Alohub định nghĩa sẵn để hỗ trợ thông báo, xử lý giao diện, tương tác tuỳ theo nhu cầu của từng CRM)
 
        <script src="jssip-3.10.0.min.js" type="text/javascript"></script>
         <script src="sipjs.js" type="text/javascript"></script>
@@ -49,11 +57,7 @@ Sau khi tải về, giải nén và có thể chạy thử demo.
 
                 onRegister();
 
-- Hệ thống hỗ trợ 2 loại thiết bị nghe gọi:
-  - Nghe gọi trên trình duyệt
-  - Nghe gọi qua softphone, IP Phone
-
-- Sau khi kết nối thành công với tổng đài, ngay lúc này đã có thể nhận và gọi điện tới khách hàng. Các hàm dùng để tương tác với hệ thống:
+- Sau khi kết nối thành công với tổng đài, ngay lúc này đã có thể nhận và gọi điện tới khách hàng. Các hàm dùng để tương tác với webphone:
 
 | STT | Hàm                 | Mô tả                                                                    |
 | --- |---------------------|--------------------------------------------------------------------------|
