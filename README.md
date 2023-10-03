@@ -1,6 +1,6 @@
 # Hướng dẫn nhúng webphone vào ứng dụng CRM của doanh nghiệp
 
-1. **Chức năng của webphone**
+**1. Chức năng của webphone**
 
 - Là một webphone dựa trên mã nguồn mở javascript.
 
@@ -14,7 +14,7 @@
 
 
 
-2. **Khởi tạo**
+**2. Khởi tạo**
 
 - Thông tin đăng nhập webphone như API endpoint, API key ... Các thông tin này sẽ được chúng tôi cung cấp khi đăng ký dịch vụ.
   
@@ -22,7 +22,7 @@
 
 
 
-3. **Hướng dẫn tích hợp**
+**3. Hướng dẫn tích hợp**
 
 **Bước 1: DEMO**
 Sau khi tải về, giải nén và có thể chạy thử demo trên local hoặc demo online tại:
