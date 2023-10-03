@@ -12,15 +12,19 @@
   
 - Hỗ trợ popup thông tin khách hàng khi có cuộc gọi đến
 
+
+
 2. **Khởi tạo**
 
 - Thông tin đăng nhập webphone như API endpoint, API key ... Các thông tin này sẽ được chúng tôi cung cấp khi đăng ký dịch vụ.
   
-- Mã nguồn webphone được chia sẻ tại github 
+- Mã nguồn webphone được chia sẻ tại github
+
+
 
 3. **Hướng dẫn tích hợp**
 
-**Bước 1: Demo **
+**Bước 1: DEMO**
 Sau khi tải về, giải nén và có thể chạy thử demo trên local hoặc demo online tại:
 https://app.alohub.vn/jsphonev10.0/index.html
 
