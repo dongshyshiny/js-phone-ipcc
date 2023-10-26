@@ -94,3 +94,7 @@ Phụ lục: Bảng mã lỗi khi gọi ra
 | 9 | CALLOUT\_AGENT\_BUSY |   | Mã trả về 786 - Busy. Vui lòng đăng xuất và đăng nhập lại để tiếp tục sử dụng. |
 | 10 | CALLOUT\_PERMISSION\_DENY |   | Không có quyền gọi ra. Liên hệ Admin để cấu hình |
 | 11 | ERROR\_CALLOUT\_CONNECT |   | Có lỗi xảy ra |
+
+**Lưu ý: 
+*Đối với khách hàng sử dụng jsPhone chỉ nhúng js không tùy chỉnh lại giao diện có thể sử dụng demo-js-new và các config tùy chỉnh sẽ được đưa vào file html init
+*Bạn có thể minni file js sau khi chỉnh sửa để dung lượng được đảm bảo tối ưu nhất như với demo-js
