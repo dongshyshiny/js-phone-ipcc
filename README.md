@@ -1,5 +1,7 @@
 # I. Tích hợp tổng đài ảo
+Đặc tả API: https://documenter.getpostman.com/view/16373045/2s93K1qfRm#e8dd291a-d411-468e-b04b-72a54b3f3c6f
 ![Alt](https://alohub.vn/wp-content/uploads/2023/12/Design2-Standard-API-Flow.drawio.png)
+
 
 # II. Hướng dẫn nhúng webphone vào ứng dụng CRM của doanh nghiệp
 
