@@ -4,6 +4,7 @@ var intervalId;
 var timeCount = 0;
 var audioRemote;
 var isAutoAnswer = 1;
+var usingCallJs = 0;
 
 var callOptions = {
     pcConfig: {
@@ -23,7 +24,7 @@ window.onload = function () {
     loadContentPhone();
 }
 
-function addHtml(){
+function addHtml() {
     document.getElementById('alohub_sipml5').innerHTML += '<!--Form Login\'-->\n' +
         '    <div id="alohub_login_content">\n' +
         '        <!--Icon Click mở ra form login-->\n' +
@@ -374,7 +375,8 @@ function onRegister() {
         sockets: [socket],
         display_name: txtDisplayName.value,
         uri: txtPublicIdentity.value,
-        password: txtPassword.value
+        password: txtPassword.value,
+        session_timers: false
     };
 
     saveCredentials();
@@ -539,7 +541,13 @@ async function alohubMakeCall(phoneNumber) {
 
 function onCall() {
     var numberPhone = txtPhoneNumber.value;
-    //alohubMakeCall(numberPhone);
+
+    if (usingCallJs === 1) {
+        coolPhone.call(numberPhone);
+    } else {
+        alohubMakeCall(numberPhone);
+    }
+
     loadContentPhoneRinging();
     addPhoneNumber(numberPhone);
 }
