@@ -1,5 +1,5 @@
 # I. Tích hợp tổng đài ảo
-![Alt]([images/someimage.png](https://drive.google.com/file/d/1OOCS3mEza4l2JewFG0PZD8fNl4cszNEi/view?usp=sharing))
+![Alt](https://alohub.vn/wp-content/uploads/2023/12/Design2-Standard-API-Flow.drawio.png)
 
 # II. Hướng dẫn nhúng webphone vào ứng dụng CRM của doanh nghiệp
 
