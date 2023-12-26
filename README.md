@@ -1,4 +1,7 @@
-# Hướng dẫn nhúng webphone vào ứng dụng CRM của doanh nghiệp
+# I. Tích hợp tổng đài ảo
+![Alt]([images/someimage.png](https://drive.google.com/file/d/1OOCS3mEza4l2JewFG0PZD8fNl4cszNEi/view?usp=sharing))
+
+# II. Hướng dẫn nhúng webphone vào ứng dụng CRM của doanh nghiệp
 
 **1. Chức năng của webphone**
 
