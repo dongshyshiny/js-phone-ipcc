@@ -1,33 +1,17 @@
 # I. Hướng dẫn nhúng webphone vào ứng dụng CRM của doanh nghiệp
 
 **1. Chức năng của webphone**
-
 - Là một webphone dựa trên mã nguồn mở javascript.
-
 - Công nghệ sử dụng WebRTC chạy trực tiếp trên trình duyệt (Chrome/Firefox/Edge/CocCoc/Safari), không cần cài đặt thêm
   softphone ngoài.
-
 - Thực hiện gọi ra Click-to-call trên webphone
-
 - Tiếp nhận cuộc gọi vào trên webphone
-
 - Hỗ trợ popup thông tin khách hàng khi có cuộc gọi đến
 
-**2. Khởi tạo**
+**2. Hướng dẫn tích hợp**
 
-- Thông tin đăng nhập webphone như API endpoint, API key ... Các thông tin này sẽ được chúng tôi cung cấp khi đăng ký
-  dịch vụ.
-
-- Mã nguồn webphone được chia sẻ tại github
-
-**3. Hướng dẫn tích hợp**
-
-**Bước 1: DEMO**
-Sau khi tải về, giải nén và có thể chạy thử demo trên local hoặc demo online tại:
-https://app.alohub.vn/jsphonev10.0/index.html
-
-**Bước 2: Lấy thông tin đăng nhập vào hệ thống**
-
+**Bước 1: Yêu cầu Alohub khởi tạo thông tin tài khoản**
+Bộ tham số cung cấp gồm có:
 - API Endpoint: Địa chỉ API để gọi ra click-to-call
 - API Key: Key tích hợp
 - WebSocket Server URL: Địa chỉ socket server để webphone đăng nhập vào
@@ -38,7 +22,13 @@ https://app.alohub.vn/jsphonev10.0/index.html
 - Password: Ví dụ 123456
 - Realm: Tùy chọn, có thể bỏ qua
 
-**Bước 3: Lập trình tích hợp tiếp nhận cuộc gọi JSPhone vào CRM**
+**Bước 2: Tải mã nguồn và demo**
+- Đối với khách hàng chỉ nhúng jsphone, không tùy chỉnh lại giao diện có thể sử dụng luôn package demo-js-new và các config
+tùy chỉnh sẽ được đưa vào file html init
+- Bạn có thể minni file js sau khi chỉnh sửa để dung lượng được đảm bảo tối ưu nhất như với demo-js*
+- Có thể chạy thử demo trên local hoặc demo online tại: https://app.alohub.vn/jsphonev10.0/index.html
+
+**Bước 3: Hướng dẫn lập trình**
 
 - Import các lib javascript vào ứng dụng CRM của doanh nghiệp, các lib này được đóng gói trong mã nguồn cung cấp (trong
   đó sipjs.js là file js chứa các hàm Alohub định nghĩa sẵn để hỗ trợ thông báo, xử lý giao diện, tương tác tuỳ theo nhu
@@ -81,16 +71,16 @@ https://app.alohub.vn/jsphonev10.0/index.html
 
 **Các hàm này đã được để trong file sipjs.js**
 
-**Phụ lục:**
+**4. Phụ lục:**
 
-Bảng các cờ được sử dụng
+Bảng các tham số cấu hình được sử dụng 
 
 | STT | Name         | Mô tả                                                                                                 |
 |-----|--------------|-------------------------------------------------------------------------------------------------------|
 | 1   | isAutoAnswer | Nếu muốn hệ thống tự bắt máy thì 1 và ngược lại (mặc định 1)                                          |
 | 2   | usingCallJs  | Hệ thống có 2 option gọi ra cho khách hàng: sử dụng JSPhone(1) và sử dụng API makeCall(0). Mặc định 0 |
 
-Bảng mã lỗi khi gọi ra
+Bảng mã lỗi khi gọi ra sử dụng API 
 
 | STT | Error Code                    | Sip Code                                         | Mô tả                                                                                                                |
 |-----|-------------------------------|--------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
@@ -105,8 +95,3 @@ Bảng mã lỗi khi gọi ra
 | 9   | CALLOUT\_AGENT\_BUSY          |                                                  | Mã trả về 786 - Busy. Vui lòng đăng xuất và đăng nhập lại để tiếp tục sử dụng.                                       |
 | 10  | CALLOUT\_PERMISSION\_DENY     |                                                  | Không có quyền gọi ra. Liên hệ Admin để cấu hình                                                                     |
 | 11  | ERROR\_CALLOUT\_CONNECT       |                                                  | Có lỗi xảy ra                                                                                                        |
-
-**Lưu ý:**
-*Đối với khách hàng sử dụng jsPhone chỉ nhúng js không tùy chỉnh lại giao diện có thể sử dụng demo-js-new và các config
-tùy chỉnh sẽ được đưa vào file html init*
-*Bạn có thể minni file js sau khi chỉnh sửa để dung lượng được đảm bảo tối ưu nhất như với demo-js*
