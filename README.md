@@ -29,7 +29,6 @@ tùy chỉnh sẽ được đưa vào file html init
 - Có thể chạy thử demo trên local hoặc demo online tại: https://app.alohub.vn/jsphonev10.0/index.html
 
 **Bước 3: Hướng dẫn lập trình**
-
 - Import các lib javascript vào ứng dụng CRM của doanh nghiệp, các lib này được đóng gói trong mã nguồn cung cấp (trong
   đó sipjs.js là file js chứa các hàm Alohub định nghĩa sẵn để hỗ trợ thông báo, xử lý giao diện, tương tác tuỳ theo nhu
   cầu của từng CRM)
@@ -67,7 +66,7 @@ tùy chỉnh sẽ được đưa vào file html init
 | 9   | onHangUp();         | Kết thúc cuộc gọi                                                        |
 | 10  | alohubMakeCall();   | Kết nối cuộc gọi sử dụng API                                             |
 
-**Chú ý: **
+**Chú ý:**
 - Tất cả các hàm dưới đây đều phải được implement để đảm bảo tính đúng đắn của chương trình
 - Các hàm này đã được để trong file sipjs.js
 
