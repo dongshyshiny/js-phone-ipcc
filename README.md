@@ -67,21 +67,19 @@ tùy chỉnh sẽ được đưa vào file html init
 | 9   | onHangUp();         | Kết thúc cuộc gọi                                                        |
 | 10  | alohubMakeCall();   | Kết nối cuộc gọi sử dụng API                                             |
 
-**Chú ý: Tất cả các hàm dưới đây đều phải được implement để đảm bảo tính đúng đắn của chương trình**
-
-**Các hàm này đã được để trong file sipjs.js**
+**Chú ý: **
+- Tất cả các hàm dưới đây đều phải được implement để đảm bảo tính đúng đắn của chương trình
+- Các hàm này đã được để trong file sipjs.js
 
 **4. Phụ lục:**
 
-Bảng các tham số cấu hình được sử dụng 
-
+**Bảng các tham số cấu hình được sử dụng**
 | STT | Name         | Mô tả                                                                                                 |
 |-----|--------------|-------------------------------------------------------------------------------------------------------|
 | 1   | isAutoAnswer | Nếu muốn hệ thống tự bắt máy thì 1 và ngược lại (mặc định 1)                                          |
 | 2   | usingCallJs  | Hệ thống có 2 option gọi ra cho khách hàng: sử dụng JSPhone(1) và sử dụng API makeCall(0). Mặc định 0 |
 
-Bảng mã lỗi khi gọi ra sử dụng API 
-
+**Bảng mã lỗi khi gọi ra sử dụng API**
 | STT | Error Code                    | Sip Code                                         | Mô tả                                                                                                                |
 |-----|-------------------------------|--------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
 | 1   | IPCC\_NOT\_CONNECT\_CUSTOMER  | 404                                              | Không kết nối được đến số thuê bao                                                                                   |
