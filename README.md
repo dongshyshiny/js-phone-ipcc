@@ -12,14 +12,14 @@
 
 **Bước 1: Yêu cầu Alohub khởi tạo thông tin tài khoản**
 Bộ tham số cung cấp gồm có:
-| STT | Tên tham số         | Mô tả                                                                    |
-|-----|---------------------|--------------------------------------------------------------------------|
-| 1   | txtDomain           | Địa chỉ API endpoint, ví dụ: **https://domain.com/api/**                     |
-| 2   | txtApiKey           | Key tích hợp, ví dụ **kjlkjkdshlfjdslkj@#!23**                                                    |
-| 3   | txtWebsocketServerUrl | Địa chỉ socket server, ví dụ **wss://alohub.vn:7443**
-| 4   | txtPassword         | Mật khẩu                                                  |
-| 5   | txtDisplayName      | Tên hiển thị của máy lẻ, ví dụ **Sale 1000**                                  |
-| 6   | txtPublicIdentity   | Địa chỉ của máy lẻ, ví dụ **sip:1000@alohub.vn:5060** |
+| STT | Tên tham số         | Mô tả                                                                    | Chú thích |
+|-----|---------------------|--------------------------------------------------------------------------|------|
+| 1   | txtDomain           | Địa chỉ API endpoint, ví dụ: **https://domain.com/api/**                 |Chỉ dùng khi tích hợp API, nếu nhúng jsphone thì không cần)
+| 2   | txtApiKey           | Key tích hợp, ví dụ **kjlkjkdshlfjdslkj@#!23**                           |Chỉ dùng khi tích hợp API, nếu nhúng jsphone thì không cần
+| 3   | txtWebsocketServerUrl | Địa chỉ socket server, ví dụ **wss://alohub.vn:7443**                  |Bắt buộc
+| 4   | txtPassword         | Mật khẩu                                                                 |Bắt buộc
+| 5   | txtDisplayName      | Tên hiển thị của máy lẻ, ví dụ **Sale 1000**                             |Tùy chọn
+| 6   | txtPublicIdentity   | Địa chỉ của máy lẻ, ví dụ **sip:1000@alohub.vn:5060**                    |Bắt buộc
 
 
 **Bước 2: Tải mã nguồn và demo**
