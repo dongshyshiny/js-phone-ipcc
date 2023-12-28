@@ -4,7 +4,7 @@ var intervalId;
 var timeCount = 0;
 var audioRemote;
 var isAutoAnswer = 1;
-var usingCallJs = 0;
+var usingCallJs = 1;
 
 var callOptions = {
     pcConfig: {
@@ -21,45 +21,12 @@ window.onload = function () {
     audioRemote = document.getElementById("audio_remote");
     addHtml();
     loadCredentials();
-    loadContentPhone();
+    onRegister();
+    loadContentPhoneDial();
 }
 
 function addHtml() {
     document.getElementById('alohub_sipml5').innerHTML += '<!--Form Login\'-->\n' +
-        '    <div id="alohub_login_content">\n' +
-        '        <!--Icon Click mở ra form login-->\n' +
-        '        <button id="btnOpenLoginForm" class="alohub_button-call" onclick="onTogglePhone();">\n' +
-        '            <svg width="25" height="25" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
-        '                <path d="M9 16C2.814 9.813 3.11 5.134 5.94 3.012l.627-.467a1.483 1.483 0 0 1 2.1.353l1.579 2.272a1.5 1.5 0 0 1-.25 1.99L8.476 8.474c-.38.329-.566.828-.395 1.301.316.88 1.083 2.433 2.897 4.246 1.814 1.814 3.366 2.581 4.246 2.898.474.17.973-.015 1.302-.396l1.314-1.518a1.5 1.5 0 0 1 1.99-.25l2.276 1.58a1.48 1.48 0 0 1 .354 2.096l-.47.633C19.869 21.892 15.188 22.187 9 16z"\n' +
-        '                      fill="customColor"/>\n' +
-        '            </svg>\n' +
-        '        </button>\n' +
-        '        <!--End icon Click mở ra form login-->\n' +
-        '        <div id="alohub_login_form">\n' +
-        '            <span class="alohub_icon_minimize" onclick="onTogglePhone();">\n' +
-        '               <svg width="25" height="25" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">\n' +
-        '                  <g id="icomoon-ignore"></g>\n' +
-        '                  <path d="M6.576 6.576c-5.205 5.205-5.205 13.643 0 18.849s13.643 5.205 18.849-0c5.206-5.206 5.206-13.643 0-18.849s-13.643-5.205-18.849 0zM24.67 24.67c-4.781 4.781-12.56 4.781-17.341 0s-4.781-12.56 0-17.341c4.781-4.781 12.56-4.781 17.341 0s4.78 12.56-0 17.341z"\n' +
-        '                        fill="customColor"></path>\n' +
-        '                  <path d="M10.722 9.969l-0.754 0.754 5.278 5.278-5.253 5.253 0.754 0.754 5.253-5.253 5.253 5.253 0.754-0.754-5.253-5.253 5.278-5.278-0.754-0.754-5.278 5.278z"\n' +
-        '                        fill="customColor"></path>\n' +
-        '               </svg>\n' +
-        '            </span>\n' +
-        '            <div id="txtRegStatus"></div>\n' +
-        '            <div class="alohub_form_item">\n' +
-        '                <label for="txtDisplayName">Display Name</label>\n' +
-        '                <input type="text" id="txtDisplayName" placeholder="e.g. John Doe">\n' +
-        '            </div>\n' +
-        '            <div class="alohub_form_item">\n' +
-        '                <label for="txtPublicIdentity">Public Identity</label>\n' +
-        '                <input type="text" id="txtPublicIdentity" placeholder="e.g. sip:+33600000000@doubango.org">\n' +
-        '            </div>\n' +
-        '            <div class="alohub_form_item_footer">\n' +
-        '                <button id="btnRegister" onclick="onRegister();">Login</button>\n' +
-        '            </div>\n' +
-        '        </div>\n' +
-        '    </div>\n' +
-        '    <!--End Form Login\'-->\n' +
         '    <!--Form nhập số điện thoại(có validate số, enter sẽ gọi ra, và có 2 position khi người dùng thay đổi)-->\n' +
         '    <div id="alohub_call_dial">\n' +
         '            <span class="alohub_icon_full" onclick="minimizeContent();">\n' +
@@ -267,32 +234,22 @@ function minimizeContent() {
     alohub_answer_content.classList.toggle("minimize");
 }
 
-function loadContentPhone() {
-    alohub_call_dial.style.display = 'none';
-    alohub_calling_content.style.display = 'none';
-    alohub_answer_content.style.display = 'none';
-    alohub_login_content.style.display = 'block';
-}
-
 function loadContentPhoneRinging() {
     alohub_call_dial.style.display = 'none';
     alohub_calling_content.style.display = 'block';
     alohub_answer_content.style.display = 'none';
-    alohub_login_content.style.display = 'none';
 }
 
 function loadContentPhoneDial() {
     alohub_call_dial.style.display = 'block';
     alohub_calling_content.style.display = 'none';
     alohub_answer_content.style.display = 'none';
-    alohub_login_content.style.display = 'none';
 }
 
 function loadContentPhoneAnswer() {
     alohub_call_dial.style.display = 'none';
     alohub_calling_content.style.display = 'none';
     alohub_answer_content.style.display = 'block';
-    alohub_login_content.style.display = 'none';
 }
 
 function loadCredentials() {
