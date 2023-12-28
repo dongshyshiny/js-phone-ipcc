@@ -12,15 +12,15 @@
 
 **Bước 1: Yêu cầu Alohub khởi tạo thông tin tài khoản**
 Bộ tham số cung cấp gồm có:
-- API Endpoint: Địa chỉ API để gọi ra click-to-call
-- API Key: Key tích hợp
-- WebSocket Server URL: Địa chỉ socket server để webphone đăng nhập vào
-- ICE Servers: Địa chỉ STUN server, mặc định: [{ url: 'stun:stun.l.google.com:19302'}]
-- Display Name: Ví dụ 1000
-- Private Identity: Ví dụ 1000
-- Public Identity: Ví dụ sip:1000@sipserver:port
-- Password: Ví dụ 123456
-- Realm: Tùy chọn, có thể bỏ qua
+| STT | Tên tham số         | Mô tả                                                                    |
+|-----|---------------------|--------------------------------------------------------------------------|
+| 1   | txtDomain           | Địa chỉ API endpoint, ví dụ: **https://domain.com/api/**                     |
+| 2   | txtApiKey           | Key tích hợp, ví dụ **kjlkjkdshlfjdslkj@#!23**                                                    |
+| 3   | txtWebsocketServerUrl | Địa chỉ socket server, ví dụ **wss://alohub.vn:7443**
+| 4   | txtPassword         | Mật khẩu                                                  |
+| 5   | txtDisplayName      | Tên hiển thị của máy lẻ, ví dụ **Sale 1000**                                  |
+| 6   | txtPublicIdentity   | Địa chỉ của máy lẻ, ví dụ **sip:1000@alohub.vn:5060** |
+
 
 **Bước 2: Tải mã nguồn và demo**
 - Đối với khách hàng chỉ nhúng jsphone, không tùy chỉnh lại giao diện có thể sử dụng luôn package demo-js-new và các config
