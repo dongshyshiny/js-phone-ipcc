@@ -11,6 +11,7 @@
 **2. Hướng dẫn tích hợp**
 
 **Bước 1: Yêu cầu Alohub khởi tạo thông tin tài khoản**
+
 Bộ tham số cung cấp gồm có:
 | STT | Tên tham số         | Mô tả                                                                    | Chú thích |
 |-----|---------------------|--------------------------------------------------------------------------|------|
@@ -23,9 +24,7 @@ Bộ tham số cung cấp gồm có:
 
 
 **Bước 2: Tải mã nguồn và demo**
-- Đối với khách hàng chỉ nhúng jsphone, không tùy chỉnh lại giao diện có thể sử dụng luôn package demo-js-new và các config
-tùy chỉnh sẽ được đưa vào file html init
-- Bạn có thể minni file js sau khi chỉnh sửa để dung lượng được đảm bảo tối ưu nhất như với demo-js*
+- Sử dụng package mã nguồn: demo-js-new
 - Có thể chạy thử demo trên local hoặc demo online tại: https://app.alohub.vn/jsphonev10.0/index.html
 
 **Bước 3: Hướng dẫn lập trình**
