@@ -91,3 +91,7 @@ Bộ tham số cung cấp gồm có:
 | 9   | CALLOUT\_AGENT\_BUSY          |                                                  | Mã trả về 786 - Busy. Vui lòng đăng xuất và đăng nhập lại để tiếp tục sử dụng.                                       |
 | 10  | CALLOUT\_PERMISSION\_DENY     |                                                  | Không có quyền gọi ra. Liên hệ Admin để cấu hình                                                                     |
 | 11  | ERROR\_CALLOUT\_CONNECT       |                                                  | Có lỗi xảy ra                                                                                                        |
+
+II. Call flow
+Link API document: https://documenter.getpostman.com/view/16373045/2s93K1qfRm#1edad48b-a679-41d6-9416-491e0807ec9b
+![alt text](https://alohub.vn/wp-content/uploads/2023/12/Design2-Standard-API-Flow.drawio.png)
