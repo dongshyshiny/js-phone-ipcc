@@ -94,4 +94,4 @@ Bộ tham số cung cấp gồm có:
 
 II. Call flow
 Link API document: https://documenter.getpostman.com/view/16373045/2s93K1qfRm#1edad48b-a679-41d6-9416-491e0807ec9b
-![alt text](https://alohub.vn/wp-content/uploads/2023/12/Design2-Standard-API-Flow.drawio.png)
+![Alt text](https://alohub.vn/wp-content/uploads/2023/12/Design2-Standard-API-Flow.drawio.png)
