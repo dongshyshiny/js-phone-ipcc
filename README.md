@@ -1,4 +1,4 @@
-# I. Hướng dẫn nhúng webphone vào ứng dụng CRM của doanh nghiệp
+# I. Hướng dẫn tích hợp vào ứng dụng CRM của doanh nghiệp
 
 **1. Chức năng của webphone**
 - Là một webphone dựa trên mã nguồn mở javascript.
@@ -8,11 +8,9 @@
 - Tiếp nhận cuộc gọi vào trên webphone
 - Hỗ trợ popup thông tin khách hàng khi có cuộc gọi đến
 
-**2. Hướng dẫn tích hợp**
+**2. Khởi tạo thông tin tài khoản**
 
-**Bước 1: Yêu cầu Alohub khởi tạo thông tin tài khoản**
-
-Bộ tham số cung cấp gồm có:
+Bộ tham số Alohub cung cấp gồm có:
 | STT | Tên tham số         | Mô tả                                                                    | Chú thích |
 |-----|---------------------|--------------------------------------------------------------------------|------|
 | 1   | txtDomain           | Địa chỉ API endpoint, ví dụ: **https://domain.com/api/**                 |Chỉ dùng khi tích hợp API, nếu nhúng jsphone thì không cần)
@@ -22,12 +20,23 @@ Bộ tham số cung cấp gồm có:
 | 5   | txtDisplayName      | Tên hiển thị của máy lẻ, ví dụ **Sale 1000**                             |Tùy chọn
 | 6   | txtPublicIdentity   | Địa chỉ của máy lẻ, ví dụ **sip:1000@alohub.vn:5060**                    |Bắt buộc
 
-
-**Bước 2: Tải mã nguồn và demo**
+**3. Tải mã nguồn và demo**
 - Sử dụng package mã nguồn: demo-js-new
 - Có thể chạy thử demo trên local hoặc demo online tại: https://app.alohub.vn/jsphonev10.0/index.html
 
-**Bước 3: Hướng dẫn lập trình**
+**4. Cấu hình jsphone**
+| STT | Name         | Mô tả                                                                                                 |
+|-----|--------------|-------------------------------------------------------------------------------------------------------|
+| 1   | usingCallJs | Hệ thống có 2 option gọi ra cho khách hàng: sử dụng JSPhone(tham số = 1) và sử dụng API makeCall(tham số = 0).|
+| 2   | isAutoAnswer  | Nếu muốn hệ thống tự bắt máy thì 1 và ngược lại (mặc định 1) |
+
+**5. Hướng dẫn lập trình tích hợp**
+**Phương pháp 1: Nhúng trực tiếp giao diện jsphone vào CRM**
+- Đây là phương án đơn giản, nhanh và ko đòi hỏi lập trình phức tạp.
+- Chỉ cần dùng bộ tham số ở trên đưa vào file index.html và nhúng html vào CRM của doanh nghiệp
+- Lưu ý với phương pháp này thì một số tham số txtDomain, txtApiKey là không cần thiết.
+
+**Phương pháp 2: Sử dụng thư viện javascript của webRTC phone**
 - Import các lib javascript vào ứng dụng CRM của doanh nghiệp, các lib này được đóng gói trong mã nguồn cung cấp (trong
   đó sipjs.js là file js chứa các hàm Alohub định nghĩa sẵn để hỗ trợ thông báo, xử lý giao diện, tương tác tuỳ theo nhu
   cầu của từng CRM)
@@ -69,13 +78,7 @@ Bộ tham số cung cấp gồm có:
 - Tất cả các hàm dưới đây đều phải được implement để đảm bảo tính đúng đắn của chương trình
 - Các hàm này đã được để trong file sipjs.js
 
-**4. Phụ lục:**
-
-**Bảng các tham số cấu hình được sử dụng**
-| STT | Name         | Mô tả                                                                                                 |
-|-----|--------------|-------------------------------------------------------------------------------------------------------|
-| 1   | isAutoAnswer | Nếu muốn hệ thống tự bắt máy thì 1 và ngược lại (mặc định 1)                                          |
-| 2   | usingCallJs  | Hệ thống có 2 option gọi ra cho khách hàng: sử dụng JSPhone(1) và sử dụng API makeCall(0). Mặc định 0 |
+**6. Phụ lục:**
 
 **Bảng mã lỗi khi gọi ra sử dụng API**
 | STT | Error Code                    | Sip Code                                         | Mô tả                                                                                                                |
@@ -93,5 +96,5 @@ Bộ tham số cung cấp gồm có:
 | 11  | ERROR\_CALLOUT\_CONNECT       |                                                  | Có lỗi xảy ra                                                                                                        |
 
 # II. Call flow
-Link API document: https://documenter.getpostman.com/view/16373045/2s93K1qfRm#1edad48b-a679-41d6-9416-491e0807ec9b
+- Link API document: https://documenter.getpostman.com/view/16373045/2s93K1qfRm#1edad48b-a679-41d6-9416-491e0807ec9b
 ![Design2-Standard API Flow drawio](https://github.com/dongshyshiny/js-phone-ipcc/assets/4079539/c51c3937-88db-4744-a026-2d216ff286f1)
