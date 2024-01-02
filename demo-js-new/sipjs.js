@@ -275,7 +275,7 @@ function loadCredentials() {
             txtDisplayName.value = s_value;
         }
         if ((s_value = window.localStorage.getItem('alohub.identity.impi'))) {
-            txtPrivateIdentity.value = s_value;
+             txtPublicIdentity.value.split(/[:@]+/)[1] = s_value;
         }
     }
 }
@@ -303,7 +303,7 @@ function saveCredentials() {
             txtDisplayName.value = s_value;
         }
         if ((s_value = window.localStorage.getItem('alohub.identity.impi'))) {
-            txtPrivateIdentity.value = s_value;
+            txtPublicIdentity.value.split(/[:@]+/)[1] = s_value;
         }
     }
 }
@@ -476,7 +476,7 @@ async function alohubMakeCall(phoneNumber) {
             method: 'POST',
             body: JSON.stringify({
                 phoneNumber: phoneNumber,
-                ipPhone: txtPrivateIdentity.value,
+                ipPhone: txtPublicIdentity.value.split(/[:@]+/)[1],
                 transactionId: `ALOHUB_${new Date().getTime()}`
             }),
             headers: {
