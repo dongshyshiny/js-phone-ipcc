@@ -26,7 +26,9 @@ Bộ tham số Alohub cung cấp gồm có:
 **4. Cấu hình jsphone**
 | STT | Name         | Mô tả                                                                                                 |
 |-----|--------------|-------------------------------------------------------------------------------------------------------|
-| 1   | usingCallJs | Hệ thống có 2 option gọi ra cho khách hàng: sử dụng JSPhone(tham số = 1) và sử dụng API makeCall(tham số = 0).|
+| 1   | usingCallJs | Hệ thống có 2 option gọi ra cho khách hàng: 
+- sử dụng JSPhone(tham số = 1)
+- sử dụng API makeCall(tham số = 0).|
 | 2   | isAutoAnswer  | Nếu muốn hệ thống tự bắt máy thì 1 và ngược lại (mặc định 1) |
 
 **5. Hướng dẫn lập trình tích hợp**
