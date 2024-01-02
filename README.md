@@ -1,9 +1,8 @@
 # I. Hướng dẫn tích hợp vào ứng dụng CRM của doanh nghiệp
 
 **1. Chức năng của webphone**
-- Là một webphone dựa trên mã nguồn mở javascript.
-- Công nghệ sử dụng WebRTC chạy trực tiếp trên trình duyệt (Chrome/Firefox/Edge/CocCoc/Safari), không cần cài đặt thêm
-  softphone ngoài.
+- Là một webphone sử dụng công nghệ sử dụng WebRTC chạy trực tiếp trên trình duyệt (Chrome/Firefox/Edge/CocCoc/Safari)
+- Không cần cài đặt thêm softphone ngoài.
 - Thực hiện gọi ra Click-to-call trên webphone
 - Tiếp nhận cuộc gọi vào trên webphone
 - Hỗ trợ popup thông tin khách hàng khi có cuộc gọi đến
