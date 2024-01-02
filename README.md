@@ -30,12 +30,13 @@ Bộ tham số Alohub cung cấp gồm có:
 | 2   | isAutoAnswer  | Nếu muốn hệ thống tự bắt máy thì 1 và ngược lại (mặc định 1) |
 
 **5. Hướng dẫn lập trình tích hợp**
+
 **Phương pháp 1: Nhúng trực tiếp giao diện jsphone vào CRM**
 - Đây là phương án đơn giản, nhanh và ko đòi hỏi lập trình phức tạp.
 - Chỉ cần dùng bộ tham số ở trên đưa vào file index.html và nhúng html vào CRM của doanh nghiệp
 - Lưu ý với phương pháp này thì một số tham số txtDomain, txtApiKey là không cần thiết.
 
-**Phương pháp 2: Sử dụng thư viện javascript của webRTC phone**
+**Phương pháp 2: Chỉ sử dụng thư viện javascript của webRTC phone**
 - Import các lib javascript vào ứng dụng CRM của doanh nghiệp, các lib này được đóng gói trong mã nguồn cung cấp (trong
   đó sipjs.js là file js chứa các hàm Alohub định nghĩa sẵn để hỗ trợ thông báo, xử lý giao diện, tương tác tuỳ theo nhu
   cầu của từng CRM)
