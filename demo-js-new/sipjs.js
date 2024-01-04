@@ -275,7 +275,7 @@ function loadCredentials() {
             txtDisplayName.value = s_value;
         }
         if ((s_value = window.localStorage.getItem('alohub.identity.impi'))) {
-             txtPublicIdentity.value.split(/[:@]+/)[1] = s_value;
+            txtPublicIdentity.value.split(/[:@]+/)[1] = s_value;
         }
     }
 }
@@ -438,10 +438,10 @@ function onRegister() {
                 onAnswer();
             }
         } else {
-            console.log('con', session.connection)
+            console.log('session connection', session.connection)
             session.connection.addEventListener('addstream', function (e) {
-                this.audioRemote.srcObject = e.stream;
-                this.audioRemote.play();
+                audioRemote.srcObject = e.stream;
+                audioRemote.play();
             });
         }
     });
@@ -500,7 +500,7 @@ function onCall() {
     var numberPhone = txtPhoneNumber.value;
 
     if (usingCallJs === 1) {
-        coolPhone.call(numberPhone);
+        coolPhone.call(numberPhone, callOptions);
     } else {
         alohubMakeCall(numberPhone);
     }
