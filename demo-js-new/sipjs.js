@@ -14,7 +14,9 @@ var callOptions = {
     mediaConstraints: {
         audio: true,
         video: false
-    }
+    },
+    /*Add 7/1/2024, fix loi server gui REINVITE sau 60s tren Chrome */
+    sessionTimersExpires:1800
 };
 
 window.onload = function () {
