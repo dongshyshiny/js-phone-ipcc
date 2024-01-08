@@ -334,8 +334,8 @@ function onRegister() {
         sockets: [socket],
         display_name: txtDisplayName.value,
         uri: txtPublicIdentity.value,
-        password: txtPassword.value,
-        session_timers: false
+        password: txtPassword.value
+        /*session_timers: false*/
     };
 
     saveCredentials();
