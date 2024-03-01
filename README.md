@@ -74,6 +74,9 @@ Bộ tham số Alohub cung cấp gồm có:
 | 9   | onHangUp();         | Kết thúc cuộc gọi                                                        |
 | 10  | alohubMakeCall();   | Kết nối cuộc gọi sử dụng API                                             |
 
+- Các tham số jssip cần set
+        + Trong callOptions: sessionTimersExpires: 1800 (xử lý lỗi Session Interval Too Small)
+        + 
 **Chú ý:**
 - Tất cả các hàm dưới đây đều phải được implement để đảm bảo tính đúng đắn của chương trình
 - Các hàm này đã được để trong file sipjs.js
