@@ -76,7 +76,14 @@ Bộ tham số Alohub cung cấp gồm có:
 
 - Các tham số jssip cần set
         + Trong callOptions: sessionTimersExpires: 1800 (xử lý lỗi Session Interval Too Small)
-        + 
+        + Bổ sung thêm block sau để fix lỗi 30s mới ring được đến KH (jssip trên Chrome)
+          session.on("icecandidate", function (event) {
+            if (event.candidate.type === "srflx" &&
+                event.candidate.relatedAddress !== null &&
+                event.candidate.relatedPort !== null) {
+                event.ready();
+            }
+        });
 **Chú ý:**
 - Tất cả các hàm dưới đây đều phải được implement để đảm bảo tính đúng đắn của chương trình
 - Các hàm này đã được để trong file sipjs.js
