@@ -63,24 +63,12 @@ function addHtmlLogin() {
             "               </svg>\n" +
             "        </span>\n" +
             "            <div class=\"alohub_form_item\">\n" +
-            "                <label for=\"txtDomain\">API Endpoint</label>\n" +
-            "                <input type=\"text\" id=\"txtDomain\" placeholder=\"e.g. https://alohub.vn\">\n" +
-            "            </div>\n" +
-            "            <div class=\"alohub_form_item\">\n" +
-            "                <label for=\"txtApiKey\">API Key</label>\n" +
-            "                <input type=\"password\" id=\"txtApiKey\" placeholder=\"********************\">\n" +
-            "            </div>\n" +
-            "            <div class=\"alohub_form_item\">\n" +
             "                <label for=\"txtWebsocketServerUrl\">WebSocket Server URL</label>\n" +
             "                <input type=\"text\" id=\"txtWebsocketServerUrl\" placeholder=\"e.g. ws://sipml5.org:5062\">\n" +
             "            </div>\n" +
             "            <div class=\"alohub_form_item\">\n" +
             "                <label for=\"txtDisplayName\">Display Name</label>\n" +
             "                <input type=\"text\" id=\"txtDisplayName\" placeholder=\"e.g. John Doe\">\n" +
-            "            </div>\n" +
-            "            <div class=\"alohub_form_item\">\n" +
-            "                <label for=\"txtPrivateIdentity\">Private Identity</label>\n" +
-            "                <input type=\"text\" id=\"txtPrivateIdentity\" placeholder=\"e.g. +33600000000\">\n" +
             "            </div>\n" +
             "            <div class=\"alohub_form_item\">\n" +
             "                <label for=\"txtPublicIdentity\">Public Identity</label>\n" +
