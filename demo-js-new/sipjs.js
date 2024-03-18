@@ -38,12 +38,12 @@ function addHtmlLogin() {
     if (usingAutoLogin === 1) {
         document.getElementById('alohub_sipml5').innerHTML += "<input type=\"text\" id=\"txtDomain\" value=\"\" class=\"hidden\" placeholder=\"e.g: alohub.vn\">\n" +
             "    <input type=\"password\" id=\"txtApiKey\" value=\"\" class=\"hidden\" placeholder=\"apiKey\">\n" +
-            "    <input type=\"text\" id=\"txtWebsocketServerUrl\" value=\"wss://crm.alohub.vn:57444\" class=\"hidden\"\n" +
+            "    <input type=\"text\" id=\"txtWebsocketServerUrl\" value=\"\" class=\"hidden\"\n" +
             "           placeholder=\"e.g: wss://alohub.vn:7443\">\n" +
             "    <input type=\"text\" id=\"txtPrivateIdentity\" value=\"\" class=\"hidden\" placeholder=\"e.g: 9999\">\n" +
-            "    <input type=\"password\" id=\"txtPassword\" value=\"Medic@#2024\" class=\"hidden\">\n" +
-            "    <input type=\"text\" id=\"txtDisplayName\" value=\"8804\" class=\"hidden\">\n" +
-            "    <input type=\"text\" id=\"txtPublicIdentity\" value=\"sip:8804@crm.alohub.vn:55092\" class=\"hidden\">";
+            "    <input type=\"password\" id=\"txtPassword\" value=\"\" class=\"hidden\">\n" +
+            "    <input type=\"text\" id=\"txtDisplayName\" value=\"\" class=\"hidden\">\n" +
+            "    <input type=\"text\" id=\"txtPublicIdentity\" value=\"\" class=\"hidden\">";
     } else {
         document.getElementById('alohub_sipml5').innerHTML += "<div id=\"alohub_login_content\">\n" +
             "        <button id=\"btnOpenLoginForm\" class=\"alohub_button-call\" onclick=\"onTogglePhone();\">\n" +
