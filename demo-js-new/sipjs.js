@@ -22,9 +22,9 @@ var callOptions = {
 
 window.onload = function () {
     audioRemote = document.getElementById("audio_remote");
+    addHtmlLogin();
     addHtml();
     loadCredentials();
-    addHtmlLogin();
 
     if (usingAutoLogin === 1) {
         onRegister();
@@ -114,13 +114,15 @@ function addHtml() {
         '                </span>\n' +
         '        <label for="txtPhoneNumber">Số điện thoại</label>\n' +
         '        <div class="d-flex">\n' +
+        '          <form onsubmit="return false" class="d-flex">\n' +
         '            <input type="text" id="txtPhoneNumber">\n' +
-        '            <button id="btnClickCall" class="alohub_button-call" onclick="onCall();">\n' +
+        '            <button type="submit" id="btnClickCall" class="alohub_button-call" onclick="onCall();">\n' +
         '                <svg width="25" height="25" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
         '                    <path d="M9 16C2.814 9.813 3.11 5.134 5.94 3.012l.627-.467a1.483 1.483 0 0 1 2.1.353l1.579 2.272a1.5 1.5 0 0 1-.25 1.99L8.476 8.474c-.38.329-.566.828-.395 1.301.316.88 1.083 2.433 2.897 4.246 1.814 1.814 3.366 2.581 4.246 2.898.474.17.973-.015 1.302-.396l1.314-1.518a1.5 1.5 0 0 1 1.99-.25l2.276 1.58a1.48 1.48 0 0 1 .354 2.096l-.47.633C19.869 21.892 15.188 22.187 9 16z"\n' +
         '                          fill="customColor"/>\n' +
         '                </svg>\n' +
         '            </button>\n' +
+        '          </form>\n' +
         '        </div>\n' +
         '    </div>\n' +
         '    <!--End form nhập số điện thoại(có validate số, enter sẽ gọi ra, và có 2 position khi người dùng thay đổi)-->\n' +
@@ -342,12 +344,6 @@ function loadCredentials() {
         if ((s_value = window.localStorage.getItem('alohub.identity.password'))) {
             txtPassword.value = s_value;
         }
-        if ((s_value = window.localStorage.getItem('alohub.identity.endpoint'))) {
-            txtDomain.value = s_value;
-        }
-        if ((s_value = window.localStorage.getItem('alohub.identity.key'))) {
-            txtApiKey.value = s_value;
-        }
         if ((s_value = window.localStorage.getItem('alohub.identity.display_name'))) {
             txtDisplayName.value = s_value;
         }
@@ -359,29 +355,11 @@ function loadCredentials() {
 
 function saveCredentials() {
     if (window.localStorage) {
-        var s_value;
-
-        if ((s_value = window.localStorage.getItem('alohub.identity.websocket_server_url'))) {
-            txtWebsocketServerUrl.value = s_value;
-        }
-        if ((s_value = window.localStorage.getItem('alohub.identity.impu'))) {
-            txtPublicIdentity.value = s_value;
-        }
-        if ((s_value = window.localStorage.getItem('alohub.identity.password'))) {
-            txtPassword.value = s_value;
-        }
-        if ((s_value = window.localStorage.getItem('alohub.identity.endpoint'))) {
-            txtDomain.value = s_value;
-        }
-        if ((s_value = window.localStorage.getItem('alohub.identity.key'))) {
-            txtApiKey.value = s_value;
-        }
-        if ((s_value = window.localStorage.getItem('alohub.identity.display_name'))) {
-            txtDisplayName.value = s_value;
-        }
-        if ((s_value = window.localStorage.getItem('alohub.identity.impi'))) {
-            txtPublicIdentity.value.split(/[:@]+/)[1] = s_value;
-        }
+        window.localStorage.setItem('alohub.identity.websocket_server_url', txtWebsocketServerUrl.value);
+        window.localStorage.setItem('alohub.identity.impu', txtPublicIdentity.value);
+        window.localStorage.setItem('alohub.identity.password', txtPassword.value);
+        window.localStorage.setItem('alohub.identity.display_name', txtDisplayName.value);
+        window.localStorage.setItem('alohub.identity.impi', txtPublicIdentity.value);
     }
 }
 
