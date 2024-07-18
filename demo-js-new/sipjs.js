@@ -472,6 +472,15 @@ function onRegister() {
         });
 
         session.on("icecandidate", function (event) {
+            if (e.candidate) {
+                const candidate = e.candidate.candidate;
+                if (candidate.includes('::')) {
+                    console.log('Filtered out IPv6 candidate:', candidate);
+                    return; // Bỏ qua candidate IPv6
+                }
+                session.addIceCandidate(e.candidate);
+            }
+
             if (event.candidate.type === "srflx" &&
                 event.candidate.relatedAddress !== null &&
                 event.candidate.relatedPort !== null) {
@@ -479,9 +488,10 @@ function onRegister() {
             }
         });
 
-        // session.on("icecandidate", function (event) {
-        //     event.ready();
-        // });
+        session.on('sdp', function (e) {
+            console.log(e)
+            e.sdp = filterSDP(e.sdp); // Loại bỏ candidate IPv6 trong SDP
+        });
 
         if (session.direction === 'incoming') {
             console.log('===incoming===');
@@ -584,4 +594,12 @@ function onHangUp() {
     if (session) {
         session.terminate();
     }
+}
+
+function filterSDP(sdp) {
+    console.log('test', sdp)
+    return sdp.split('\r\n').filter(line => {
+        // Loại bỏ các dòng chứa candidate IPv6
+        return !/^a=candidate:\d+ \d+ \w+ \d+ [0-9a-fA-F:]+ .*/.test(line);
+    }).join('\r\n');
 }
